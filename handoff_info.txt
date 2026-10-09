@@ -1,0 +1,19 @@
+PART 2: what's coming from me
+
+Elie's output, the output of my stock-screening algo. e.g. value_v1.csv.
+
+Columns: date, ticker, rating (buy/sell), weight, score
+- Each rating date lists my full target basket. I hold it until the next rating date.
+- buy = in the basket (weights add up to 1). sell = I expect it to underperform.
+- A rating on date D only uses information that was public by D.
+- Quarterly schedule (first trading day of Jan/Apr/Jul/Oct), S&P 500 US tickers, benchmark SPY.
+- Two versions per algo: a multi-year backtest and a short live record since 2026-04-05.
+- The backtest universe is today's S&P 500.
+
+
+Nate's output:
+1. Build the basket's return series from the prices, then run your alpha/beta regression vs SPY.
+2. Compare the sell group to the buy group: do the sells really lag?
+3. If score is included: does a higher score mean a higher forward return?
+
+Your tool should take any ratings file in and give results out, so I can add new algos without changing your code.
